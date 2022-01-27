@@ -9,7 +9,7 @@ function drawBar(wrapped, number, bar, data) {
 	if (data.attribute !== getHealthAttribute()) {
 		return wrapped(number, bar, data);
 	}
-	const actorData = bar.parent.parent.actor.data.data;
+	const actorData = this.actor.data.data;
 	const nonlethalDamage = getNonlethalDamage(actorData);
 	const tempHp = getTemporaryHp(actorData);
 
@@ -43,7 +43,7 @@ function drawBar(wrapped, number, bar, data) {
 		// Draw nonlethal damage
 		//.beginFill(0x4b371c, 1)
 		.beginFill(0x000000, 1)
-		.lineStyle(0, 0x000000, 1)
+		.lineStyle(1, 0x000000, 1)
 		.drawRoundedRect(1, 1.5, Math.min(nonlethalPct, tempPct)*(this.w-2), h-3, 1);
 
 	// Set position
